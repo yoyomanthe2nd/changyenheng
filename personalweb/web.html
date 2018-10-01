@@ -1,0 +1,898 @@
+﻿<!DOCTYPE HTML>
+<!DOCTYPE html PUBLIC "" "">
+<HTML>
+<HEAD>
+
+<META http-equiv="X-UA-Compatible" content="IE=11.0000">  
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">          
+<META name="viewport" content="width=device-width, initial-scale=1.0">  
+   
+<TITLE>Yeng-Heng personal website</TITLE>   
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">    
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	   
+    <STYLE type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="/path/to/parallax.js"></script>
+        
+         
+        .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+        } 
+        .container {
+            display: block;
+            width: 85%;
+            margin: auto;
+            overflow: hidden; 
+            color: #333333
+            padding-top:10px;
+        }
+
+
+
+
+        body{font:15px/1.5 Helvetica-light;
+            padding:0;
+            margin: 0;
+            background-color:#F2F2F2;
+            background-image:url("t1.png");
+            background-attachment: fixed;
+        }
+        header h1{font:15px/1 Helvetica-light;
+            padding:0;
+            margin: 0;
+            background-color:transparent;
+            padding-top:20px
+        }
+
+        header ul{padding:0px;
+                  margin:0px;}
+       
+        header li{
+            font:15px/1 Helvetica-light;
+            float: left;
+            display: inline;
+            padding:0px 20px;
+            
+        }
+
+        header nav{
+            float: right;
+            margin-top: -30px;
+        }
+
+        strong{
+            font:Helvetica;
+            font-weight: 600;
+            color:#272727;
+        }
+
+        a{
+            color: inherit;
+        }
+
+
+        a:hover {
+          color:inherit;
+        }
+
+        a:visited {
+          color:inherit;
+        }
+
+        a:active {
+          color:inherit;
+        }
+
+
+        .row strong{
+            font-size: 18px;
+        }
+
+
+
+        .row{
+            font:16px/1.2 helvetica-light;
+            color:#5b5b5b;
+        }
+      
+
+        .windowbiggroup{
+           width: 100%;
+           padding:0% 18% 0 18%;
+           background-color: transparent;
+           margin-top: -2.5%;
+       }
+        .windowgroup{float: center}
+
+        .backgroundimage{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: -1;}
+        .window {
+            position: relative;
+            -webkit-clip-path: inset(0% 0% 0% 100% round 1000px);
+            clip-path: inset(0% 0% 0% 0% round 1000px);
+            width: 25%;
+            float: left;
+            display: block;
+            margin: 7% 4% 3% 4%;
+        }
+
+        .overlay {
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        overflow: hidden;
+        width: 100%;
+        height:0;
+        transition: 1s ease;
+        }
+
+        .window:hover .overlay {
+        bottom: 0;
+        height: 100%;}
+
+
+        .slogan{
+            padding:1% 2% 1% 2%;
+            background-color: white;
+        }
+
+
+        .introduction{
+            background-color: white;
+            border-radius: 25px;
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 15%;
+            box-shadow: 6px 6px 75px -20px lightgray;
+        }
+
+        .title{
+            margin-top:-10%;
+            margin-left: -0%;  
+            position: absolute;
+        }
+
+        .projectbox{
+            margin: 5% 0% 5% 0%;
+            background-color: white;
+            box-shadow: 6px 6px 45px -4px lightgray;
+            border-radius:12px;
+        }
+
+        .projectbox img{
+            width: 100%;
+            border-top-left-radius:12px;
+            border-top-right-radius:12px;
+            transform: scale(1);
+            transition: .3s ease-in-out;
+        }
+
+
+        .projectbox:hover img {
+            opacity: 0.6;
+        }
+
+
+        .modal-bg{   
+            display:none;
+            position: fixed;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255,255,255,0.6 );  
+            left: 0;
+            top: 0;
+            justify-content: center;
+            align-items: center;   
+            overflow: auto;
+        }
+
+        .modal-content{
+            position: relative;
+            width: 60%;
+            background-color:white;
+            border-radius: 4px;
+            padding: 30px;
+            margin: auto;
+            margin-top: 5%;
+            box-shadow: 6px 6px 75px -20px gray;
+            min-width: 85%;
+        }
+        
+        .close {
+            color: #aaaaaa;
+            float: right;
+            top: 0;
+            font-size: 36px;
+            transition: 0.1s ease;
+            font-weight: 100;
+        }
+
+        
+        .close:hover {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+            transform: rotate(45deg);
+            transition: 0.2s ease;
+            transform-origin: center;
+        }
+
+
+
+
+
+
+        @keyframes mymove {
+        from {right: 90px; top: 90px;}
+        to {right: 0px; top:0px;}
+        }
+
+
+        /*
+
+        .projectbox:hover .middle{
+            opacity: 1;
+        }
+
+        .middle {
+          transition: .5s ease;
+          opacity: 0;
+          position: absolute;
+          top: 35%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          text-align: center;
+        }
+
+        .text {
+          background-color: white;
+          color: black;
+          font:helvetica 18px;
+          font-weight: 600;
+          padding: 8px 16px;
+        }
+
+        */
+
+
+
+        @media only screen and (max-width: 600px) {
+            .windowbiggroup{    
+               height: 200px;
+            }
+
+            .modal-content{
+                width: 85%;
+            }
+        }
+
+
+
+    </STYLE> 
+    </HEAD>
+<div class="containerBig">
+	<BODY>
+        <header>
+                <div class="container" id="header">
+                    <div id="me" style="margin-left: 4%"> 
+                       <h1 href="#" ><img src="name2.png" width="36px" align="left" hspace="10px" ><strong>YEN-HENG</strong><br>CHANG</h1>
+                    </div>
+                       <nav>
+                       <ul class="col-sm-0 col-xs-8"></ul>
+                       <ul class="col-sm-12 col-xs-4">
+                           <li><a href="#ABOUT" class="smooth-goto"><strong>ABOUT</strong><br>ME</a></li>
+                           <li><a href="#INFORMATION" class="smooth-goto"><strong>INFORMATION</strong><br>DESIGN</a></li>
+                           <li><a href="#PRODUCT" class="smooth-goto"><strong>PRODUCT</strong><br>DESIGN</a></li>
+                           <li><a href="#EXPIREMENT" class="smooth-goto"><strong>EXPIREMENT</strong></a></li>
+                       </ul>
+                       </nav>
+                  
+                </div>
+        </header> 
+
+            <div>
+            <img src="up.png"
+                 width="100%" style="margin-top:4.5%;">    
+            </div>
+
+            <div class="windowbiggroup">
+
+            <div class="windowgroup">
+            <div class="window"><a  href="#INFORMATION" class="smooth-goto">
+               <img src="window1.png" width="100%" alt="Avatar" class="image">
+                <div class="overlay">
+                <div class="text">
+                <img src="window11.png" width="100%" alt="Avatar" class="image"> 
+                </div>
+            </div>
+            </a>
+            </div>
+
+            <div class="windowgroup">
+            <div class="window"><a  href="#PRODUCT" class="smooth-goto">
+                <img src="window2.png" width="100%" alt="Avatar" class="image">
+                <div class="overlay">
+                <div class="text">
+                <img src="window22.png" width="100%" alt="Avatar" class="image"> 
+                </div>
+            </div>
+            </a>
+            </div>
+
+            <div class="windowgroup">
+            <div class="window"><a href="#EXPIREMENT" class="smooth-goto">
+                <img src="window3.png" width="100%" alt="Avatar" class="image">
+                <div class="overlay">
+                <div class="text">
+                <img src="window33.png" width="100%" alt="Avatar" class="image"> 
+                </div>
+            </div>
+            </a>
+            </div>
+
+            </div>
+            </div>
+            </div>         
+            </div>
+
+            <div class="planeimage">
+            <img src="plane.png"
+                 width="100%" style="margin-top:-5%;position:relative;z-index: -1;animation: mymove 2.5s;" >    
+            </div>
+
+            <div style=";margin:-35% 13% 0% 13%;">
+                <h class="slogan" style="font:48px/1.2 Helvetica-bold;opacity:0.95">
+                    DESIGN IS PLANE</h>
+                    <br>
+                <h class="slogan" style="font:48px/1.2 Helvetica-light;opacity:0.95">
+                    DESTINATION IS DREAM</h>
+            </div>
+     
+             <div class="column" style="margin-top:16%;">
+                <div class="title">
+                    <img src="title1.png" width="100%">
+                </div>
+                <div class="introduction">
+                    <div class="row"  style="padding:11% 14% 5% 14%;" id="ABOUT">
+                        <div class="col-sm-6 col-xs-12">
+                            <img src="me.png" width="200px">
+                            <p>
+                                <br>
+                                <strong>Name</strong><br>
+                                張硯珩<br>
+                                Yen-Heng Chang<br><br>
+     
+                                <strong>Country</strong><br>
+                                台灣<br>
+                                Taiwan
+                            </p>
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <p>
+                            <br>
+                                <strong>Language</strong><br>
+                                中文, English<br><br>
+     
+                                <strong>Skills</strong><br>
+                                2D : Ai / Ps<br>
+                                3D : Solidworks / ProE / Alias / Sketchup<br>
+                                language : HTML5 / CSS <br><br>
+
+                                <strong>About Me</strong><br>
+                                Integer vehicula malesuada lorem a porttitor. Nam maximus suscipit lectus, eu finibus mi rutrum at. Suspendisse ornare consequat ex, ac faucibus nisi interdum eget. Curabitur ac risus auctor, rhoncus dui at, scelerisque magna. Mauris id dapibus ex. Quisque feugiat, urna ac ullamcorper suscipit.
+                                <br><br>
+                                <img src="name.png" width="110px" align="right">
+                                </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                <div>
+                <img src="bgb.png"
+                     width="100%" style="position:relative;z-index: -1;margin-top:-10%" >    
+                </div>
+
+
+
+                <div class="column" style="margin-top:-24%;">
+                <div class="title">
+                    <img src="title2.png" width="100%">
+                </div>
+
+                <div class="introduction">
+                    <div class="row" style="padding:11% 9% 5% 9%;" id="INFORMATION">
+
+                        <div class="col-sm-6 col-xs-12">
+                        <div class="projectbox" >
+                            <img src="pro1.png" id="myBtn1" style="cursor: pointer;">
+                             <p style="margin:25px 7% 10% 7%">
+                                <strong>How To Visit Chinese Cupid</strong><br>
+                                Infographic & Poster<br><br><br><br>
+                            </p>
+                        </div>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12">
+                        <div class="projectbox" >
+                            <img src="pro2.png" id="myBtn2" style="cursor: pointer;">
+                             <p style="margin:25px 7% 10% 7%">
+                                <strong>What happened to Taiwain's 815 power outage</strong><br>
+                                Infographic & Motion graphics<br><br><br>
+                            </p>
+                        </div>
+                        </div>
+
+                        <br>
+                        <p style="float: right;">
+                        <a href="#header" class="smooth-goto">
+                        <strong>To The&nbsp</strong>Top
+                        </a>
+                        </p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div>
+                <img src="bgy.png"
+                     width="100%" style="position:relative;z-index: -1;margin-top:-9%" >    
+                </div>
+
+
+
+                <div class="column" style="margin-top:-26%;">
+                <div class="title">
+                    <img src="title3.png" width="100%">
+                </div>
+
+                <div class="introduction">
+                    <div class="row" style="padding:11% 9% 5% 9%;" id="PRODUCT">
+
+                        <div class="col-sm-6 col-xs-12">
+                        <div class="projectbox" >
+                            <img src="pro3.png" id="myBtn3" style="cursor: pointer;">
+                             <p style="margin:25px 7% 10% 7%">
+                                <strong>Dr. Micro</strong><br>
+                                Medical product Design<br>& Service Design<br><br><br>
+                            </p>
+                        </div>
+                        </div>
+
+
+                        <div class="col-sm-6 col-xs-12">
+                        <div class="projectbox" >
+                            <img src="pro4.png" id="myBtn4" style="cursor: pointer;">
+                             <p style="margin:25px 7% 10% 7%">
+                                <strong>Blowin Sumo</strong><br>
+                                Medical product Design
+                                <br><br><br><br>
+                             </p>
+                        </div>
+                        </div>
+
+                        <br>
+                        <p style="float: right;">
+                        <a href="#header" class="smooth-goto">
+                        <strong>To The&nbsp</strong>Top
+                        </a>
+                        </p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                <img src="bgb.png"
+                     width="100%" style="position:relative;z-index: -1;margin-top:-10%" >    
+                </div>
+
+
+                <div class="column" style="margin-top:-24%;">
+                <div class="title">
+                    <img src="title4.png" width="100%">
+                </div>
+
+                <div class="introduction">
+                    <div class="row" style="padding:11% 9% 5% 9%;" id="EXPIREMENT">
+                        <div class="col-sm-6 col-xs-12">
+                        <div class="projectbox" >
+                            <img src="pro5.png" id="myBtn5" style="cursor: pointer;">
+                             <p style="margin:25px 7% 10% 7%">
+                                <strong>PostPET</strong><br>
+                                Self-service DIY Station<br><br><br><br>
+                            </p>
+                        </div>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12">
+                        <div class="projectbox" >
+                            <img src="pro6.png" id="myBtn6" style="cursor: pointer;">
+                             <p style="margin:25px 7% 10% 7%">
+                                <strong>Food’n Food</strong><br>
+                                Exhibit
+                                <br><br><br><br>
+                            </p>
+                        </div>
+                        </div>
+                        <br>
+                        <p style="float: right;">
+                        <a href="#header" class="smooth-goto">
+                        <strong>To The&nbsp</strong>Top
+                        </a>
+                        </p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                
+                <div id="myModal1" class="modal-bg">
+                    <div class="modal-content">
+                        <span class="close">+</span>
+                        <div>
+                            <h1>How To Visit Chinese Cupid</h1>
+                            <p>
+                                Integer vehicula malesuada lorem a porttitor. Nam maximus suscipit lectus, eu finibus mi rutrum at. Suspendisse ornare consequat ex, ac faucibus nisi interdum eget. Curabitur ac risus auctor, rhoncus dui at, scelerisque magna. Mauris id dapibus ex. Quisque feugiat, urna ac ullamcorper suscipit.
+                            </p>
+                        </div>  
+                    </div>
+                </div>
+
+
+                <div id="myModal2" class="modal-bg">
+                    <div class="modal-content">
+                        <span class="close">+</span>
+                        <div>
+                            <h1>What happened to Taiwain's 815 power outage</h1>
+                            <p>
+                                Integer vehicula malesuada lorem a porttitor. Nam maximus suscipit lectus, eu finibus mi rutrum at. Suspendisse ornare consequat ex, ac faucibus nisi interdum eget. Curabitur ac risus auctor, rhoncus dui at, scelerisque magna. Mauris id dapibus ex. Quisque feugiat, urna ac ullamcorper suscipit.
+                            </p>
+                        </div>  
+                    </div>
+                </div>
+
+
+                <div id="myModal3" class="modal-bg">
+                    <div class="modal-content">
+                        <span class="close">+</span>
+                        <div>
+                            <h1>Dr. Micro</h1>
+                            <img src="drmicro1.png" style="width: 100%;margin-top: 5%;">
+                            <br><br>
+                            <p style="font-size: 8px">
+                                <strong>co-designer</strong>_ Hao，Zheng / Sheng Yi, Chen<br>
+                                <strong>role</strong>_ concept design / graphic design / app design<br>
+                            </p>
+                            <br>
+                            <h4><strong>Background</strong></h4>
+                            Taiwan is suffered from different diseases in different seasons, such as dengue fever in the summer and flu in the winter.
+                            <br><br>The typical incubation period for influenza is 1 to 4 days. Most people may be able to infect others beginning 1 day before symptoms develop and up to 5 to 7 days after becoming sick. Some people, especially young children and people with weakened immune systems, might be able to infect others for an even longer time. But, most of the people won’t go to a doctor when they get a flu at the beginning, and that will increase their death rate, moreover, they will infect others in the same time.To learn how to prevent the epidemic expansion effectively, it’s crucial to have enough data to analyze.<br><br>
+
+                            <h4><strong>Concept</strong></h4>
+                            According to an online reservation in Taiwan in 2016, 55.4% of people wore the mask when there were air quality or flu issue been reported. So, we think mask is a good way to gain the data, since it is common for people wearing them to prevent from the bad air quality and disease in eastern countries.  We hoped to collect the data through saliva testing ( a diagnostic technique based on a chemical reaction called antigen-antibody agglutination, pregnancy test is also based on this reaction) from their mask.<br><br>
+                            <img src="reaction.png" style="width: 100%;margin-left:"><br><br>
+                            <p style="font-size: 8px">
+                            <strong>Plate 1.</strong> a mask equipe with a testing function<br>
+                            <strong>Plate 2.</strong> the antigen-antibody agglutination
+                            </p>
+                            <br>
+
+                            <h4><strong>Chip design</strong></h4>
+                            We design a chip which contains two layers, the upper layer with QR code and the under layer with the testing papers. There are holes on the QR code, and testing papers under it will make the code shows up different patterns because of the different results of the them. And the users need to scan the code to know the result. At the same time, the data is uploaded simultaneously.
+                            <br><br>
+                            <img src="dmplate3.png" style="width: 100%;margin-top:3%"><br><br>
+                            <p style="font-size: 8px">
+                            <strong>Plate 3.</strong> layers of the chip, and their functions<br><br>
+                            <img src="dmchip.png" style="width: 100%;margin-top:"><br>
+                            <p style="font-size: 8px;margin-top:%">
+                            <strong>Plate 4.</strong> the chip<br>
+                            <strong>Plate 5.</strong> infection rate in different areas (based on users data)
+                            </p>
+                            <br>
+
+                            <h4><strong>App design</strong></h4>
+                            After users scan the chip, the datas will be uploaded simultaneously, so we can analyze the infection rate of each area. Meanwhile, government can make a more appropriate decision on disease control. In order to reward the user to upload the data, Dr. Micro offer discounts of cooperate companies to them.
+                            <br><br>
+                            <img src="app.png" style="width: 100%;margin-top:5%"><br>
+                            <p style="font-size: 8px"><br>
+                            <strong>Plate 6.</strong> flow map of the app
+                            </p>
+                            <br>
+
+                            <h4><strong>Operation</strong></h4>
+                            Dr.Micro is a diseases detection system based on Big Data, effectively solving infection problems and building a network for diseases-prevention analysis. We hope all kind of masks equipped with the system of Dr. Micro. With government’s support ( includes operating or importing the diseases' test papers), we hope this system can go further.
+                            <br><br>
+                            <img src="dmplate4.png" style="width: 100%;margin-top:5%"><br>
+                            <p style="font-size: 8px"><br>
+                            <strong>Plate 7.</strong> flow chart of operation
+
+
+
+                        </div>  
+                    </div>
+                </div>
+
+
+                <div id="myModal4" class="modal-bg">
+                    <div class="modal-content">
+                        <span class="close">+</span>
+                        <div>
+                            <h1>Blowin Sumo</h1>
+                            <img src="bs1.png" style="width: 100%;margin-top: 5%;">
+                            <br><br>
+                            <p style="font-size: 8px">
+                                <strong>material</strong>_ wood / plastic tube / styrofoam ball<br>
+                            </p>
+                            <br>
+                            <h4><strong>Background</strong></h4>
+                            Taiwan has already been an aging society since 1993. According to Ministry of Interior of Taiwan, the proportion of elderly people of Taiwan ranks number 3 in Asia, behind Japan and South Korea. Therefore, it becomes more and more important to develop and improve the Long-term care and Seniors products.
+                            <br><br>It is very important to maintain cardiovascular function in older age, it will decrease the chance to get diseases and improve other functions in our body. There is a medical device called incentive spirometer( it is often recommended by doctors to their elder patients after heart related surgeries), which is used to help people improve their lungs’ function. And I think that device is very interesting, but it could be better if it is more human and emotional. Therefore, I wanted to redesign it.<br><br>
+                            <img src="spirometer.jpg" style="width:100%;"><br>
+                            <p style="font-size: 8px;margin-top: 3%">
+                            <strong>Plate 1.</strong> incentive spirometer
+                            </p>
+                            <br>
+
+                            <h4><strong>Concept</strong></h4>
+                            Since elders could resist to new things rather than normal people, so it is crucial to think deeply about mental aspect. Firstly, I decided to make it a 2 players interactive device, which meant the elders can play it with their partner or their grandchildren. We all know that elders could be happier when being accompany. Secondly, I wanted the device having Chinese or Japanese culture element, because Taiwan is a country profoundly influenced by these two countries( Taiwan had been ruled by Japan from 1895A.D. to 1945A.D.).<br><br>
+                            According to previous reasons I mentioned, I decided to make the device as a Sumo Battle( a traditional Japanese Wrestling).  There are two sides of the device,  each side have a figure. Each figure is driven by each user, the user have to blow to make the figure move forward to push against the opponent, the one who makes their opponent’s figure touch to the border win.<br><br>
+                            <img src="bssketch.jpg" style="width: 70%;margin-left:15%;opacity:0.7;"><br>
+                            <img src="sumo1.jpg" style="width: 100%;opacity:0.9;margin-top:8%">
+                            <br>
+                            <p style="font-size: 8px;margin-top: 3%">
+                            <strong>Plate 2.</strong> Japanese sumo
+                            </p><br>
+
+                            <h4><strong>Mechanism and Functions </strong></h4>
+                            There are two individual tubes connect to plastic pipes with styrofoam balls in it( hygienic purpose), and the balls connect to the figures. Therefore, when you blow to the tube, the figure will go forward.<br><br>
+                            <img src="bsexplodeddrawing.jpg" style="width: 80%;margin-left:5%;">
+                            <p style="font-size: 8px;margin-top:3%;">
+                            <strong>Plate 3.</strong> exploded drawing of Blowin Sumo
+                            </p>
+                            <img src="bs2.png" style="width: 100%;">
+                            <p style="font-size: 8px;margin-top:3%;">
+                            <strong>Plate 4.</strong> the working modle
+                            </p><br>
+
+                        </div>  
+                    </div>
+                </div>
+
+
+                <div id="myModal5" class="modal-bg">
+                    <div class="modal-content">
+                        <span class="close">+</span>
+                        <div>
+                            <h1>PosPET</h1>
+                            <img src="postpet1.jpg" style="width: 100%;margin-top: 5%;">
+                            <br><br>
+                            <p style="font-size: 8px">
+                                <strong>material</strong>_ plastic bottle / aluminum / wood， etc<br>
+                                <strong>co-designer</strong>_ Hsin Ming，Peng<br>
+                                <strong>role</strong>_ VI / experiment / design<br>
+                            </p>
+                            <br>
+                            <h4><strong>Background</strong></h4>
+                            There aren’t any incinerator working in offshore islands in Taiwan now.Therefore, they can only ship trash to Taiwan. Since the growing number of tourists, the problem shows up as well.<br><br>
+                            In oder to figure out which kind of trash is the most delicate issue on the island, we send the questionnaires, and interview the environment volunteerson on the island. Consider to the quantity and volume, we find out that pastic bottles could be the biggest trouble.<br><br>
+                            <img src="postpet2.png" style="width: 55%"><br><br>
+                            <p style="font-size: 8px">
+                            <strong>Plate 1.</strong> the growing amount of trash is positive correlation with the number of tourists in Siao Liouciou
+                            </p>
+
+                            <img src="postpet3.png" style="width: 65%;margin-left:5%"><br><br>
+                            <p style="font-size: 8px">
+                            <strong>Plate 2.</strong> the graph of how many trash did a person produce in a trip in Siao Liouciou
+                            </p>
+                            <br>
+
+                            <h4><strong>Concept</strong></h4>
+                            We want the tourists bring back their own trash.
+                            Firstly, we need to make them rethink the issue. Secondly, we need to increase their willing to bring back the trash. So, we decide to make their own trash transform to a postcard, which means the trash leave the island also the idea spreads out. And the trash they will transform is the "plastic bottles they used".<br><br>
+                            In order to reduce the volume and processing timing, we chose to hot pressing the bottles.<br><br>
+                            We want make the tourists follow the procedure in a certain place, we decided to make a little station that can do these steps easily. We hope all the tourists can be happy and honor to help the insland .<br><br>
+                            <img src="s5.jpg" style="width: 70%;margin-left:15%"><br>
+                            <p style="font-size: 8px">
+                            </p><br>
+
+                            <h4><strong>Self-service DIY Station</strong></h4>
+                            Following the steps from the right to the left, the tourist will finish their postcard in approximatly 15 minutes, we also Laser engraving the method of every steps on the table to guide them.<br><br>
+                            <img src="machine.png" style="width: 100%;">
+                            <p style="font-size: 8px;margin-top:3%;">
+                            <strong>Plate 3.</strong> details
+                            </p>
+                            <img src="procedure.png" style="width: 100%;">
+                            <p style="font-size: 8px;margin-top:3%;">
+                            <strong>Plate 4.</strong> the steps of making PostPET
+                            </p><br>
+
+                            <h4><strong>PostPET</strong></h4>
+                            Tourists can recognize their own postcard, because it will show up the colors of the bottles they bring.<br><br>
+                            <img src="card1.png" style="width: 100%;"><br>
+                            <img src="card2.png" style="width: 100%;margin-top:8px;"><br><br>
+
+
+                            <div class="embed-responsive embed-responsive-16by9">
+                            <iframe width="100%" height="" src="https://www.youtube.com/embed/io2dWo8_S3w?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+
+
+
+
+                        </div>  
+                    </div>
+                </div>
+
+                <div id="myModal6" class="modal-bg">
+                    <div class="modal-content">
+                        <span class="close">+</span>
+                        <div>
+                            <h1>Food’n Food</h1>
+                            <img src="food1.png" style="width: 100%">
+                            <br><br>
+                            <p style="font-size: 8px">
+                                <strong>material</strong>_ green bean noodle / grape juice  / cola  (you can eat them all)<br>
+                                <strong>co-designer</strong>_ Wei Qian，Hong<br>
+                                <strong>role</strong>_ experiment<br>
+                            </p>
+                            <br>
+                            <h4><strong>Background</strong></h4>
+                            Rice、noodle are the major carbohydrate we consume in Asia. We noticed that some of the carbohydrate is transparent in some extent, and they became hard when they being anhydrous. And there is a kind of  traditional Chinese noodle that is more transparent than any other carbohydrate, called “green bean noodle”.<br><br>
+                            We also find out green bean noodle can be easily colored by some drink, which contain pigment, like juice and cola, etc. Furthermore, we found out that it will melt when it cook with cola. Since those attributes make green bean noodle so special and interesting, we decide to display it by reshaping them in different form.<br><br>
+                            We felt like it would be interesting if it was a container of foods, which meant the foods are in the foods, just like ice cream corn.<br><br>
+                            <img src="food2.png" style="width: 100%"><br><br>
+                            <p style="font-size: 8px">
+                            <strong>Plate 1.</strong> rice show up transparent in some extent with lights<br>
+                            <strong>Plate 2.</strong> green rice noodle can be easily reshaped<br>
+                            </p>
+                            <br>
+
+                            <h4><strong>Procedure</strong></h4>
+                            We cooked them first to soften them. That process make them able to being reshaped by putting them in container we made. We made a bowl with holes with 3D printing, make sure that the noddle can evaporate faster, then we put them in to the oven with the same reason, then, the noodle will be dry and shaped.<br><br>
+                            <img src="food4.png" style="width: 80%;margin-left:10%;">
+                            <p style="font-size: 8px;margin-top:0%;">
+                            <strong>Plate 3.</strong> different layers
+                            </p>
+                            <img src="food3.png" style="width: 100%;margin-top:8px;">
+                            <p style="font-size: 8px;margin-top:3%;">
+                            <strong>Plate 4.</strong> the steps of reshape noodle by putting them in to the molds
+                            </p>
+                            <br>
+
+                            <h4><strong>Exhibit</strong></h4>
+                            We decide to exhibit them on the light box, in order to make the color and the texture be more obvious.<br><br>
+                            <img src="foodexhb2.jpg" style="width: 100%;">
+                            <img src="foodexhb1.png" style="width: 100%;margin-top:2%;"><br><br>
+
+                        </div>  
+                    </div>
+                </div>
+
+
+
+
+
+        <script>
+            var modal1 = document.getElementById('myModal1');
+            var btn1 = document.getElementById("myBtn1");
+            var span1 = document.getElementsByClassName("close")[0];
+            btn1.onclick = function() {
+                modal1.style.display = "block";
+            }
+            span1.onclick = function() {
+                modal1.style.display = "none";
+            }
+            window.addEventListener("click", function(event) {
+                if (event.target == modal1) {
+                    modal1.style.display = "none";
+             }
+            });
+ 
+            var modal2 = document.getElementById('myModal2');
+            var btn2 = document.getElementById("myBtn2");
+            var span = document.getElementsByClassName("close")[1];
+            btn2.onclick = function() {
+                modal2.style.display = "block";
+            }
+            span.onclick = function() {
+                modal2.style.display = "none";
+            }
+            window.addEventListener("click", function(event) {
+                if (event.target == modal2) {
+                    modal2.style.display = "none";
+             }
+            });
+
+            var modal3 = document.getElementById('myModal3');
+            var btn3 = document.getElementById("myBtn3");
+            var span = document.getElementsByClassName("close")[2];
+            btn3.onclick = function() {
+                modal3.style.display = "block";
+            }
+            span.onclick = function() {
+                modal3.style.display = "none";
+            }
+            window.addEventListener("click", function(event) {
+                if (event.target == modal3) {
+                    modal3.style.display = "none";
+             }
+            });
+
+            var modal4 = document.getElementById('myModal4');
+            var btn4 = document.getElementById("myBtn4");
+            var span = document.getElementsByClassName("close")[3];
+            btn4.onclick = function() {
+                modal4.style.display = "block";
+            }
+            span.onclick = function() {
+                modal4.style.display = "none";
+            }
+            window.addEventListener("click", function(event) {
+                if (event.target == modal4) {
+                    modal4.style.display = "none";
+             }
+            });
+
+            var modal5 = document.getElementById('myModal5');
+            var btn5 = document.getElementById("myBtn5");
+            var span = document.getElementsByClassName("close")[4];
+            btn5.onclick = function() {
+                modal5.style.display = "block";
+            }
+            span.onclick = function() {
+                modal5.style.display = "none";
+            }
+            window.addEventListener("click", function(event) {
+                if (event.target == modal5) {
+                    modal5.style.display = "none";
+             }
+            });
+
+            var modal6 = document.getElementById('myModal6');
+            var btn6 = document.getElementById("myBtn6");
+            var span = document.getElementsByClassName("close")[5];
+            btn6.onclick = function() {
+                modal6.style.display = "block";
+            }
+            span.onclick = function() {
+                modal6.style.display = "none";
+            }
+            window.addEventListener("click", function(event) {
+                if (event.target == modal6) {
+                    modal6.style.display = "none";
+             }
+            });
+
+
+            $('.smooth-goto').on('click', function() {  
+                $('html, body').animate({scrollTop: $(this.hash).offset().top - 50}, 1000);
+                return false;
+            });
+
+
+        </script>
+		
+
+	</BODY>
+</div>
+</HTML>

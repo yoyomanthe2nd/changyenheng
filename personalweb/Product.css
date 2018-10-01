@@ -1,0 +1,21 @@
+.colorTitle {
+	color: rgb(0, 112, 192);
+}
+.colorLightBlue {
+	color: rgb(0, 176, 240);
+}
+.colorOrange {
+	color: rgb(228, 108, 10);
+}
+.colorLightGreen {
+	color: rgb(146, 208, 80);
+}
+.colorYellow {
+	color: rgb(255, 192, 0);
+}
+.div-inline {
+	display: inline;
+}
+.pic_product_0101:hover {
+	background-image: url("~/Images/product_01_01_01_1.png");
+}
