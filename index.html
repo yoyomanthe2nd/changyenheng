@@ -25,7 +25,7 @@
         } 
         .container {
             display: block;
-            width: 85%;
+            width: 100%;
             margin: auto;
             overflow: hidden; 
             color: #333333
@@ -157,6 +157,8 @@
         .slogan{
             padding:1% 2% 1% 2%;
             background-color: white;
+            font:48px/1.2 Helvetica-light;
+            opacity:0.95;
         }
 
 
@@ -241,6 +243,7 @@
             transform-origin: center;
         }
 
+
         button:hover {
             background-color:#E9DDD2;
             transition: 0.2s ease;
@@ -285,15 +288,20 @@
 
 
 
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 765px) {
             .windowbiggroup{    
-               padding: 0;
+               display: none;
             }
-
+            .upimg{
+                display: none;
+            }
             .modal-content{
                 width: 85%;
             }
+            .introduction{
+                width: 85%;
 
+            }
             .facebook-responsive iframe {
             left:0;
             top:0;
@@ -301,6 +309,27 @@
             height: 300px;
             position:relative;
             }
+            nav{
+                display:inline !important;
+
+            }
+
+            .slogan{
+                padding:1% 2% 1% 2%;
+                background-color: white;
+                font:36px/1.3 Helvetica-light;
+                opacity:0.95;
+            }
+
+            .title{
+            margin-top:-13%;
+            margin-left: 0%;  
+            position: absolute;
+            width: 100%
+
+            }  
+
+
         }
 
 
@@ -310,11 +339,11 @@
 <div class="containerBig">
 	<BODY>
         <header>
-                <div class="container" id="header">
-                    <div id="me" style="margin-left: 4%"> 
-                       <h1 href="#" ><img src="name2.png" width="36px" align="left" hspace="10px" ><strong>YEN-HENG</strong><br>CHANG</h1>
+                <div id="header" class="container" style="margin-top:15px">
+                    <div class="me" style="margin-left:10%"> 
+                       <p href="#" ><img src="logo.png" width="225px" align="left" hspace="10px" ></p>
                     </div>
-                       <nav>
+                       <nav style="display:none;">
                        <ul class="col-sm-0 col-xs-8"></ul>
                        <ul class="col-sm-12 col-xs-4">
                            <li><a href="#ABOUT" class="smooth-goto"><strong>ABOUT</strong><br>ME</a></li>
@@ -327,9 +356,9 @@
                 </div>
         </header> 
 
-            <div>
+            <div class="upimg">
             <img src="up.png"
-                 width="100%" style="margin-top:4.5%;">    
+                 width="100%" style="margin-top:20px;margin-left:">    
             </div>
 
             <div class="windowbiggroup">
@@ -378,10 +407,10 @@
             </div>
 
             <div style=";margin:-35% 13% 0% 13%;">
-                <h class="slogan" style="font:48px/1.2 Helvetica-bold;opacity:0.95">
+                <h class="slogan" style="font-weight: 600">
                     DESIGN IS A PLANE</h>
                     <br>
-                <h class="slogan" style="font:48px/1.2 Helvetica-light;opacity:0.95">
+                <h class="slogan" >
                     TAKE US TO OUR DREAM</h>
             </div>
      
@@ -390,7 +419,7 @@
                     <img src="title1.png" width="100%">
                 </div>
                 <div class="introduction">
-                    <div class="row"  style="padding:11% 14% 5% 14%;" id="ABOUT">
+                    <div class="row"  style="padding:11% 14% 14% 14%;" id="ABOUT">
                         <div class="col-sm-6 col-xs-12">
                             <img src="me.png" width="200px">
                             <p>
@@ -418,9 +447,9 @@
                                 <strong>About Me</strong><br>
                                 “As above, so below; as universe, so as soul.” human have been developing to a notably extent, but at the same time it is equally crucial to our mental to catch up our technology. <br><br>
                                 I like to read books and watch movies about social or ethical issues. They are not only interesting to me, but also make me think in different aspects through the process when I design.
-                                <br><br>
-                                <img src="name.png" width="110px" align="right">
-                                </p>
+                                <br>
+                                <img src="name.png" width="0px" align="right">
+                                </p><br>
                         </div>
                     </div>
                 </div>
@@ -549,7 +578,7 @@
 
                         <div class="col-sm-6 col-xs-12">
                         <div class="projectbox" >
-                            <img src="pro6.png" id="myBtn6" style="cursor: pointer;">
+                            <img src="pro62.png" id="myBtn6" style="cursor: pointer;">
                              <p style="margin:25px 7% 10% 7%">
                                 <strong>Food’n Food</strong><br>
                                 Exhibit
